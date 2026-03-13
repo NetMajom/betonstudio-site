@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <style>
     :root {
       --bg: #f3f7f4;
-      --card: #ffffff;
+      --card: rgba(255, 255, 255, 0.94);
       --text: #1e2821;
       --muted: #4b574e;
       --line: #d5ded6;
@@ -15,9 +15,9 @@
       --accent-soft: #e7f0ea;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -27,24 +27,28 @@
     }
 
     .wrap {
-      max-width: 860px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 40px 20px 64px;
+      padding: 32px 20px 64px;
     }
 
     .hero,
-    .card {
-      background: rgba(255, 255, 255, 0.92);
+    .card,
+    .lang-card {
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: 24px;
       box-shadow: 0 18px 50px rgba(24, 42, 30, 0.08);
       backdrop-filter: blur(8px);
     }
 
-    .hero {
-      padding: 28px;
-      margin-bottom: 18px;
+    .hero,
+    .card,
+    .lang-card {
+      padding: 26px;
     }
+
+    .hero { margin-bottom: 16px; }
 
     .eyebrow {
       display: inline-block;
@@ -59,24 +63,66 @@
       text-transform: uppercase;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       margin: 0 0 12px;
     }
 
     h1 {
-      font-size: clamp(32px, 5vw, 54px);
-      line-height: 1.02;
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.04;
     }
 
-    h2 {
-      font-size: 24px;
-    }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
 
-    p {
+    p, li {
       margin: 0;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.7;
       font-size: 16px;
+    }
+
+    ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .links,
+    .lang-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .links { margin-top: 22px; }
+
+    .lang-nav {
+      margin-top: 18px;
+      margin-bottom: 16px;
+    }
+
+    a.button,
+    .lang-nav a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    a.button {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    a.secondary,
+    .lang-nav a {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--line);
     }
 
     .grid {
@@ -86,38 +132,14 @@
       margin-top: 18px;
     }
 
-    .card {
-      padding: 22px;
+    .language-sections {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
     }
 
-    .card p {
-      margin-top: 8px;
-    }
-
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 22px;
-    }
-
-    a.button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 999px;
-      background: var(--accent);
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    a.secondary {
-      background: transparent;
-      color: var(--accent);
-      border: 1px solid var(--line);
+    .lang-card h3 {
+      color: var(--text);
     }
 
     footer {
@@ -131,11 +153,10 @@
   <main class="wrap">
     <section class="hero">
       <div class="eyebrow">Beton Studio</div>
-      <h1>Epitőipari kalkulator gyors, atlathato szamitasokhoz.</h1>
+      <h1>Construction calculations for concrete, bricks, plaster and steel.</h1>
       <p>
-        Beton, teglafal, vakolat, acel es keveresi aranyok egy alkalmazasban.
-        A Beton Studio celja, hogy a napi helyszini es elokeszito szamitasokat gyorsabba,
-        pontosabba es egyszerubbe tegye.
+        Beton Studio helps estimate volume, material demand and mix ratios in a faster
+        and clearer way on iPhone, iPad and Mac.
       </p>
       <div class="links">
         <a class="button" href="/betonstudio-site/support.html">Support</a>
@@ -143,18 +164,53 @@
       </div>
     </section>
 
+    <section class="card">
+      <h2>Languages</h2>
+      <p>Choose your preferred language below. The support and privacy pages also provide the same five languages.</p>
+      <nav class="lang-nav">
+        <a href="#hu">Magyar</a>
+        <a href="#en">English</a>
+        <a href="#de">Deutsch</a>
+        <a href="#ro">Română</a>
+        <a href="#fr">Français</a>
+      </nav>
+    </section>
+
     <section class="grid">
       <article class="card">
-        <h2>Mit tud az app</h2>
-        <p>Beton terfogat, keverek, vakolas, tegla- es acelszamitasok egy helyen, tobble miertekegyseg tamogatassal.</p>
+        <h2>What the app does</h2>
+        <p>Concrete volume, mix ratios, plastering, brick estimation and steel calculations in one place.</p>
       </article>
       <article class="card">
-        <h2>Kinek keszult</h2>
-        <p>Szakembereknek, kivitelezoknek, muszaki elokesziteshez es azoknak is, akik felujitas vagy epitkezes elott szeretnenek becsulni.</p>
+        <h2>Who it is for</h2>
+        <p>Useful for professionals, contractors, renovation projects and anyone needing clearer material estimates.</p>
       </article>
       <article class="card">
-        <h2>Kapcsolat</h2>
-        <p>Tamogatas, hibabejelentes vagy adatvedelmi kerdes eseteben a kulon support es privacy oldalon talalsz informaciot.</p>
+        <h2>Store support</h2>
+        <p>You can use the support and privacy pages from this site directly in App Store Connect.</p>
+      </article>
+    </section>
+
+    <section class="language-sections">
+      <article class="lang-card" id="hu">
+        <h3>Magyar</h3>
+        <p>A Beton Studio egy modern építőipari kalkulátor beton, vakolat, tégla és acél számításokhoz. A cél a gyorsabb, pontosabb és átláthatóbb anyagbecslés.</p>
+      </article>
+      <article class="lang-card" id="en">
+        <h3>English</h3>
+        <p>Beton Studio is a modern construction calculator for concrete, plaster, brick and steel estimations, designed to make material planning faster and easier.</p>
+      </article>
+      <article class="lang-card" id="de">
+        <h3>Deutsch</h3>
+        <p>Beton Studio ist ein moderner Baukalkulator für Beton-, Putz-, Ziegel- und Stahlberechnungen und unterstützt eine schnellere und klarere Materialplanung.</p>
+      </article>
+      <article class="lang-card" id="ro">
+        <h3>Română</h3>
+        <p>Beton Studio este un calculator modern pentru construcții, util pentru calcule de beton, tencuială, cărămidă și oțel, cu estimări rapide și clare.</p>
+      </article>
+      <article class="lang-card" id="fr">
+        <h3>Français</h3>
+        <p>Beton Studio est un calculateur moderne pour le bâtiment, conçu pour estimer rapidement le béton, l’enduit, les briques et l’acier.</p>
       </article>
     </section>
 

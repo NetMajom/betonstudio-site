@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,8 @@
       --line: #d7dfd9;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -26,33 +25,59 @@
     }
 
     .wrap {
-      max-width: 860px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 40px 20px 64px;
+      padding: 32px 20px 64px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 28px;
       box-shadow: 0 16px 40px rgba(20, 34, 24, 0.06);
     }
 
-    h1, h2 {
-      margin: 0 0 12px;
+    .lang-nav,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    p, li {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
+    .lang-nav { margin-top: 18px; }
+    .footer-links { margin-top: 28px; }
+
+    .lang-nav a,
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
     }
 
-    ul {
-      padding-left: 20px;
-      margin: 8px 0 0;
+    .sections {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
     }
+
+    .lang-section {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      background: #fbfcfb;
+    }
+
+    h1, h2, h3 { margin: 0 0 12px; }
+    p, li { color: var(--muted); line-height: 1.7; font-size: 16px; }
+    ul { margin: 8px 0 0; padding-left: 20px; }
 
     .meta {
       color: var(--accent);
@@ -63,83 +88,84 @@
       margin-bottom: 10px;
     }
 
-    .section + .section {
-      margin-top: 24px;
-    }
-
-    a {
-      color: var(--accent);
-    }
+    a { color: var(--accent); }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
       <div class="meta">Privacy Policy</div>
-      <h1>Beton Studio adatvedelmi tajekoztato</h1>
-      <p>Utolsó frissítés: 2026. március 13.</p>
+      <h1>Beton Studio privacy information</h1>
+      <p>Last updated: March 13, 2026</p>
 
-      <div class="section">
-        <h2>1. Altalanos informacio</h2>
-        <p>
-          A Beton Studio celja epitőipari szamitasok elvegzese mobil- es asztali eszkozokon.
-          Az alkalmazas ugy lett kialakitva, hogy a lehetosegekhez kepest minel kevesebb szemelyes adatot kezeljen.
-        </p>
+      <nav class="lang-nav">
+        <a href="#hu">Magyar</a>
+        <a href="#en">English</a>
+        <a href="#de">Deutsch</a>
+        <a href="#ro">Română</a>
+        <a href="#fr">Français</a>
+      </nav>
+
+      <div class="sections">
+        <section class="lang-section" id="hu">
+          <h3>Magyar</h3>
+          <p>A Beton Studio célja építőipari számítások elvégzése mobil- és asztali eszközökön. Az alkalmazás a lehetőségekhez képest minél kevesebb személyes adatot kezel.</p>
+          <ul>
+            <li>helyileg tárolhat számítási adatokat és beállításokat</li>
+            <li>beállításokat, például nyelvet vagy felületi preferenciákat menthet</li>
+            <li>harmadik fél hirdetési szolgáltatása, például AdMob, saját szabályzata szerint dolgozhat fel adatokat</li>
+            <li>az app nem igényel felhasználói fiókot az alapfunkciókhoz</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="en">
+          <h3>English</h3>
+          <p>Beton Studio is designed for construction-related calculations on mobile and desktop devices and aims to minimize personal data processing.</p>
+          <ul>
+            <li>some calculation history and settings may be stored locally on the device</li>
+            <li>preferences such as language or interface settings may be saved locally</li>
+            <li>third-party advertising services such as AdMob may process data under their own policies</li>
+            <li>the app does not require user account registration for core features</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="de">
+          <h3>Deutsch</h3>
+          <p>Beton Studio dient Bau- und Materialberechnungen auf mobilen und Desktop-Geräten und verarbeitet möglichst wenig personenbezogene Daten.</p>
+          <ul>
+            <li>einige Berechnungsverläufe und Einstellungen können lokal auf dem Gerät gespeichert werden</li>
+            <li>Präferenzen wie Sprache oder Oberflächeneinstellungen können lokal gespeichert werden</li>
+            <li>Drittanbieter-Werbedienste wie AdMob können Daten gemäß ihren eigenen Richtlinien verarbeiten</li>
+            <li>für die Kernfunktionen ist keine Benutzerregistrierung erforderlich</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="ro">
+          <h3>Română</h3>
+          <p>Beton Studio este destinat calculelor din construcții pe dispozitive mobile și desktop și urmărește să proceseze cât mai puține date personale.</p>
+          <ul>
+            <li>anumite calcule și setări pot fi stocate local pe dispozitiv</li>
+            <li>preferințe precum limba sau setările interfeței pot fi salvate local</li>
+            <li>serviciile terțe de publicitate, cum ar fi AdMob, pot procesa date conform propriilor politici</li>
+            <li>aplicația nu necesită cont pentru funcțiile principale</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="fr">
+          <h3>Français</h3>
+          <p>Beton Studio est conçu pour les calculs liés au bâtiment sur mobile et ordinateur et cherche à limiter au maximum le traitement des données personnelles.</p>
+          <ul>
+            <li>certaines données de calcul et certains réglages peuvent être enregistrés localement sur l’appareil</li>
+            <li>des préférences comme la langue ou les réglages d’interface peuvent être stockées localement</li>
+            <li>des services publicitaires tiers tels qu’AdMob peuvent traiter des données selon leurs propres politiques</li>
+            <li>l’application ne nécessite pas de compte utilisateur pour ses fonctions principales</li>
+          </ul>
+        </section>
       </div>
 
-      <div class="section">
-        <h2>2. Milyen adatokat kezelhet az alkalmazas</h2>
-        <ul>
-          <li>a felhasznalo altal rogzitett szamitasi adatok</li>
-          <li>helyileg tarolt beallitasok, peldaul nyelv vagy feluleti preferenciak</li>
-          <li>hibakereseshez vagy mukodeshez kapcsolodo technikai adatok az operacios rendszer es a hasznalt szolgaltatasok keretein belul</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>3. Helyi tarolas</h2>
-        <p>
-          Az alkalmazas egyes adatokat helyileg, a keszuleken tarolhat, peldaul az elozmenyek vagy beallitasok megorzese erdekeben.
-          Ezek az adatok nem feltetlenul kerulnek kulso szerverre.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>4. Hirdetesek</h2>
-        <p>
-          Az alkalmazas tartalmazhat harmadik fel altal biztosított hirdeteseket. A hirdetesek megjelenitesehez kulso szolgaltato, peldaul a Google AdMob, adatokat kezelhet a sajat szabalyzata szerint.
-        </p>
-        <p>
-          A harmadik fel szolgaltatoira sajat adatvedelmi felteteleik vonatkoznak.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>5. Szemelyes adatok</h2>
-        <p>
-          A Beton Studio nem ker szemelyes fiok regisztraciot, es nem igenyel bejelentkezest az alapfunkciok hasznalatahoz.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>6. Harmadik fel szolgaltatasai</h2>
-        <p>
-          Az alkalmazas hasznalhat kulso szolgaltatasokat, amelyek technikai vagy uzemeltetesi celbol adatot dolgozhatnak fel.
-          Ilyen lehet peldaul a hirdeteskezeles vagy a platform altal biztositott rendszerkomponensek hasznalata.
-        </p>
-      </div>
-
-      <div class="section">
-        <h2>7. Kapcsolat</h2>
-        <p>
-          Ha adatvedelmi kerdesed van, ezen az email cimen lehet kapcsolatba lepni:
-          <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a>
-        </p>
-      </div>
-
-      <div class="section">
-        <p><a href="/betonstudio-site/support.html">Support</a></p>
-        <p><a href="/betonstudio-site/">Vissza a fooldalra</a></p>
+      <div class="footer-links">
+        <a href="/betonstudio-site/support.html">Support</a>
+        <a href="/betonstudio-site/">Home</a>
       </div>
     </section>
   </main>

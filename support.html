@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +14,8 @@
       --line: #d7dfd9;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -26,33 +25,59 @@
     }
 
     .wrap {
-      max-width: 780px;
+      max-width: 920px;
       margin: 0 auto;
-      padding: 40px 20px 64px;
+      padding: 32px 20px 64px;
     }
 
     .card {
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 20px;
+      border-radius: 22px;
       padding: 28px;
       box-shadow: 0 16px 40px rgba(20, 34, 24, 0.06);
     }
 
-    h1, h2 {
-      margin: 0 0 12px;
+    .lang-nav,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
-    p, li {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
+    .lang-nav { margin-top: 18px; }
+    .footer-links { margin-top: 28px; }
+
+    .lang-nav a,
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
     }
 
-    ul {
-      padding-left: 20px;
-      margin: 8px 0 0;
+    .sections {
+      display: grid;
+      gap: 16px;
+      margin-top: 20px;
     }
+
+    .lang-section {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      background: #fbfcfb;
+    }
+
+    h1, h2, h3 { margin: 0 0 12px; }
+    p, li { color: var(--muted); line-height: 1.7; font-size: 16px; }
+    ul { margin: 8px 0 0; padding-left: 20px; }
 
     .meta {
       color: var(--accent);
@@ -63,60 +88,84 @@
       margin-bottom: 10px;
     }
 
-    .section + .section {
-      margin-top: 24px;
-    }
-
-    a {
-      color: var(--accent);
-    }
+    a { color: var(--accent); }
   </style>
 </head>
 <body>
   <main class="wrap">
     <section class="card">
       <div class="meta">Support</div>
-      <h1>Beton Studio tamogatas</h1>
-      <p>
-        Ha hibat talaltal, kerdesed van, vagy segitsegre van szukseged a Beton Studio hasznalatahoz,
-        az alabbi csatornan tudsz kapcsolatba lepni velunk.
-      </p>
+      <h1>Beton Studio support</h1>
+      <p>This page contains support information in Hungarian, English, German, Romanian and French.</p>
 
-      <div class="section">
-        <h2>Kapcsolat</h2>
-        <p>Email: <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a></p>
+      <nav class="lang-nav">
+        <a href="#hu">Magyar</a>
+        <a href="#en">English</a>
+        <a href="#de">Deutsch</a>
+        <a href="#ro">Română</a>
+        <a href="#fr">Français</a>
+      </nav>
+
+      <div class="sections">
+        <section class="lang-section" id="hu">
+          <h3>Magyar</h3>
+          <p>Ha hibát találtál, kérdésed van, vagy segítségre van szükséged a Beton Studio használatához, írj ide: <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a></p>
+          <ul>
+            <li>hibabejelentés és technikai probléma</li>
+            <li>kérdések az alkalmazás funkcióival kapcsolatban</li>
+            <li>pontatlannak tűnő számítások visszajelzése</li>
+            <li>App Store, eszköz- vagy kompatibilitási probléma</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="en">
+          <h3>English</h3>
+          <p>If you found a bug, need technical help, or have questions about Beton Studio, contact: <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a></p>
+          <ul>
+            <li>bug reports and technical issues</li>
+            <li>questions about app features</li>
+            <li>feedback about unclear or inaccurate calculations</li>
+            <li>App Store, device or compatibility issues</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="de">
+          <h3>Deutsch</h3>
+          <p>Wenn du einen Fehler gefunden hast oder Hilfe bei Beton Studio brauchst, kontaktiere bitte: <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a></p>
+          <ul>
+            <li>Fehlermeldungen und technische Probleme</li>
+            <li>Fragen zu Funktionen der App</li>
+            <li>Rückmeldung zu unklaren oder ungenauen Berechnungen</li>
+            <li>App-Store-, Geräte- oder Kompatibilitätsprobleme</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="ro">
+          <h3>Română</h3>
+          <p>Dacă ai găsit o eroare sau ai nevoie de ajutor pentru Beton Studio, scrie la: <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a></p>
+          <ul>
+            <li>raportare erori și probleme tehnice</li>
+            <li>întrebări despre funcțiile aplicației</li>
+            <li>semnalarea calculelor care par neclare sau incorecte</li>
+            <li>probleme legate de App Store, dispozitiv sau compatibilitate</li>
+          </ul>
+        </section>
+
+        <section class="lang-section" id="fr">
+          <h3>Français</h3>
+          <p>Si vous avez trouvé un bug ou si vous avez besoin d’aide pour Beton Studio, contactez-nous à l’adresse suivante : <a href="mailto:feher.robert@gmail.com">feher.robert@gmail.com</a></p>
+          <ul>
+            <li>signalement de bugs et problèmes techniques</li>
+            <li>questions sur les fonctions de l’application</li>
+            <li>retour sur des calculs jugés imprécis ou peu clairs</li>
+            <li>problèmes liés à l’App Store, à l’appareil ou à la compatibilité</li>
+          </ul>
+        </section>
       </div>
 
-      <div class="section">
-        <h2>Miben tudunk segiteni</h2>
-        <ul>
-          <li>hibabejelentesek es technikai problemak</li>
-          <li>kerdesek az alkalmazas funkcioival kapcsolatban</li>
-          <li>pontatlannak tuno szamitasok visszajelzese</li>
-          <li>App Store, eszkoz- vagy kompatibilitasi problemak</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>Hibabejelentesnel hasznos informacio</h2>
-        <ul>
-          <li>eszkoz tipusa es operacios rendszere</li>
-          <li>melyik szamitasi modulban jelentkezett a problema</li>
-          <li>rovid leiras a lepeseidrol</li>
-          <li>ha lehet, kepernyokep vagy pontos hibaizenet</li>
-        </ul>
-      </div>
-
-      <div class="section">
-        <h2>Valaszido</h2>
-        <p>
-          Igyekszunk minden megkeresesre a leheto leghamarabb valaszolni.
-        </p>
-      </div>
-
-      <div class="section">
-        <p><a href="/betonstudio-site/privacy.html">Privacy Policy</a></p>
-        <p><a href="/betonstudio-site/">Vissza a fooldalra</a></p>
+      <div class="footer-links">
+        <a href="/betonstudio-site/privacy.html">Privacy Policy</a>
+        <a href="/betonstudio-site/">Home</a>
       </div>
     </section>
   </main>
